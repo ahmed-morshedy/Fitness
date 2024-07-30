@@ -1,0 +1,211 @@
+/* Reset padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Basic body styles */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove list styling */
+ul {
+  list-style: none;
+}
+
+/* Remove link underlines */
+a {
+  text-decoration: none;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 30px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 5px #b3b3b3;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+/* Horizontal navigation menu */
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+/* Navigation links */
+nav ul a {
+  color: #797979;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+nav ul a:hover {
+  color: black;
+}
+
+.sign {
+  background: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+/* Hide checkbox and menu icon by default */
+.menu-icon,
+#menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Checkbox checked styles */
+#menu-toggle:checked ~ ul,
+#menu-toggle:checked ~ .log ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: calc(100% - 40px);
+  background-color: black;
+}
+
+/* Container padding */
+.container {
+  padding-inline: 40px;
+  width: calc(100% - 80px);
+}
+
+.boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding-block: 40px;
+  gap: 20px;
+
+  .box {
+    text-align: center;
+    background-color: #ebedf0;
+    padding: 30px 10px;
+    border-radius: 7px;
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 24px;
+      color: #3a6108;
+      padding-block: 20px;
+      span {
+        font-size: medium;
+        color: #000;
+      }
+    }
+    p {
+      padding-block: 5px;
+    }
+    .info {
+      color: #696969;
+      font-weight: bold;
+      padding-block: 5px;
+    }
+
+    .free {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Media query for small screens */
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 20px;
+    width: calc(100% - 40px);
+  }
+
+  /* Show the menu icon on small screens */
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    padding: 20px;
+    display: none;
+    li {
+      padding-block: 10px;
+
+      a {
+        padding: 10px 15px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: white;
+          color: #000;
+        }
+      }
+    }
+  }
+  nav ul a {
+    color: #fff;
+  }
+
+  .boxs {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+footer {
+  margin-top: 40px;
+  padding-block: 20px;
+  font-size: 28px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media (min-width: 767px) {
+  #menu-toggle:checked ~ ul {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    background-color: transparent;
+    justify-content: flex-end;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  /* Navigation links */
+  nav ul a {
+    color: #797979;
+    transition: all 0.3s ease;
+    font-size: 20px;
+  }
+}
