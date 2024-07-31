@@ -48,6 +48,23 @@ nav ul a {
   color: #797979;
   transition: all 0.3s ease;
   font-size: 20px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    margin: 5px auto;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s all;
+  }
+}
+
+nav ul a:hover::before {
+  width: 100%;
 }
 
 nav ul a:hover {

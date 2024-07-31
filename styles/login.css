@@ -100,6 +100,7 @@ nav ul a:hover {
   left: 0;
   width: calc(100% - 40px);
   background-color: black;
+  z-index: 10;
 }
 
 /* Container padding */
@@ -108,51 +109,49 @@ nav ul a:hover {
   width: calc(100% - 80px);
 }
 
-.boxs {
+section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  padding-block: 40px;
-  gap: 20px;
+  place-items: center;
+  padding-block: 60px;
 
-  .box {
-    text-align: center;
-    background-color: #ebedf0;
-    padding: 30px 10px;
-    border-radius: 7px;
-    h2 {
-      font-size: 28px;
-      font-weight: bold;
-    }
+  form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
 
-    .price {
-      font-weight: bold;
-      font-size: 24px;
-      color: #3a6108;
-      padding-block: 20px;
-      span {
-        font-size: medium;
-        color: #000;
+    input {
+      height: 25px;
+      margin-top: 30px;
+      border-width: 0;
+      border-width: 2px;
+      border-color: transparent transparent lightgray;
+      &:focus {
+        outline: none;
       }
     }
-    p {
-      padding-block: 5px;
-    }
-    .info {
-      color: #696969;
-      font-weight: bold;
-      padding-block: 5px;
-    }
-
-    .free {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #000;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 7px;
-      cursor: pointer;
+    a {
+      text-decoration: underline;
     }
   }
+}
+
+input[type="submit"] {
+  padding: 10px;
+  border-radius: 20px;
+  border-width: 0;
+  font-weight: 600;
+  font-size: medium;
+  color: #000;
+  margin-block: 40px;
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
 }
 
 /* Media query for small screens */
@@ -189,8 +188,11 @@ nav ul a:hover {
     color: #fff;
   }
 
-  .boxs {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  section {
+    form {
+      width: 250px;
+      padding: 10px;
+    }
   }
 }
 
@@ -201,6 +203,9 @@ footer {
   background-color: #000;
   color: #fff;
   font-weight: bold;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 @media (min-width: 767px) {

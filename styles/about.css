@@ -100,6 +100,7 @@ nav ul a:hover {
   left: 0;
   width: calc(100% - 40px);
   background-color: black;
+  z-index: 10;
 }
 
 /* Container padding */
@@ -108,49 +109,40 @@ nav ul a:hover {
   width: calc(100% - 80px);
 }
 
+section {
+  position: relative;
+  h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-size: 32px;
+    padding-top: 30px;
+  }
+}
+
 .boxs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  padding-block: 40px;
+  padding-block: 90px;
   gap: 20px;
 
   .box {
     text-align: center;
     background-color: #ebedf0;
-    padding: 30px 10px;
+    padding: 10px;
     border-radius: 7px;
-    h2 {
-      font-size: 28px;
-      font-weight: bold;
-    }
 
-    .price {
-      font-weight: bold;
-      font-size: 24px;
-      color: #3a6108;
-      padding-block: 20px;
-      span {
-        font-size: medium;
-        color: #000;
+    .image {
+      img {
+        height: 100%;
+        width: 100%;
       }
     }
+
     p {
       padding-block: 5px;
-    }
-    .info {
-      color: #696969;
-      font-weight: bold;
-      padding-block: 5px;
-    }
-
-    .free {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #000;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 7px;
-      cursor: pointer;
+      font-size: 26px;
     }
   }
 }

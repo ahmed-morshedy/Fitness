@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitBody</title>
+    <link rel="stylesheet" href="../styles/login.css" />
   </head>
   <body>
     <nav class="container">
@@ -20,14 +21,26 @@
       </ul>
     </nav>
 
-    <section>
+    <section class="container">
       <form method="post">
-        <label for="mail">E-Mail : </label>
-        <input type="mail" name="mail" id="mail" required /><br />
-        <label for="pass">Password : </label>
-        <input type="password" name="pass" id="pass" required /><br />
+        <input
+          type="mail"
+          name="mail"
+          id="mail"
+          required
+          placeholder="E-Mail"
+        />
+
+        <input
+          type="password"
+          name="pass"
+          id="pass"
+          required
+          placeholder="Password"
+        />
 
         <input type="submit" value="Login" />
+        <a href="sign.html">Regitser?</a>
       </form>
     </section>
 
